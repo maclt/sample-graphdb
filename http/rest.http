@@ -3,13 +3,8 @@
 @husband=
 
 ###
-# @name list
-GET {{$dotenv BASE_URL}} HTTP/1.2
-content-type: application/json
-
-###
 # @name register
-POST {{$dotenv BASE_URL}} HTTP/1.2
+POST {{$dotenv BASE_URL}}/users HTTP/1.2
 content-type: application/json
 
 {
@@ -18,12 +13,12 @@ content-type: application/json
 
 ###
 # @name get
-GET {{$dotenv BASE_URL}}/{{name}} HTTP/1.2
+GET {{$dotenv BASE_URL}}/{{name}}/users HTTP/1.2
 content-type: application/json
 
 ###
 # @name update
-POST {{$dotenv BASE_URL}}/marry HTTP/1.2
+POST {{$dotenv BASE_URL}}/marriage HTTP/1.2
 content-type: application/json
 
 {
@@ -33,5 +28,5 @@ content-type: application/json
 
 ###
 # @name delete
-DELETE {{$dotenv BASE_URL}}/{{name}} HTTP/1.2
+DELETE {{$dotenv BASE_URL}}/users/{{name}} HTTP/1.2
 content-type: application/json

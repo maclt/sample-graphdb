@@ -30,16 +30,16 @@ func main() {
 	})
 
 	// Define a POST route
-	router.POST("/", userService.RegisterUser)
+	router.POST("/users", userService.RegisterUser)
 
 	// Define a GET route
-	router.GET("/:name", userService.GetUser)
-
-	// Define a PATCH route
-	router.POST("/marry", userService.MarryUser)
+	router.GET("/users/:name", userService.GetUser)
 
 	// Define a DELETE route
-	router.DELETE("/:name", userService.DeleteUser)
+	router.DELETE("/users:name", userService.DeleteUser)
+
+	// Define a POST route
+	router.POST("/marriage", userService.MarryUser)
 
 	// Start the server
 	router.Run(":8080") // Default runs on localhost:8080
