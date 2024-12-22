@@ -1,0 +1,37 @@
+@name=
+@wife=
+@husband=
+
+###
+# @name list
+GET {{$dotenv BASE_URL}} HTTP/1.2
+content-type: application/json
+
+###
+# @name register
+POST {{$dotenv BASE_URL}} HTTP/1.2
+content-type: application/json
+
+{
+    "name": "{{name}}"
+}
+
+###
+# @name get
+GET {{$dotenv BASE_URL}}/{{name}} HTTP/1.2
+content-type: application/json
+
+###
+# @name update
+POST {{$dotenv BASE_URL}}/marry HTTP/1.2
+content-type: application/json
+
+{
+    "husband": "{{husband}}",
+    "wife": "{{wife}}"
+}
+
+###
+# @name delete
+DELETE {{$dotenv BASE_URL}}/{{name}} HTTP/1.2
+content-type: application/json
